@@ -1,6 +1,13 @@
 echo "            Welcome to Snake and Ladder Game "
-count=100
+count=0
+len=100
 declare -A arr[100]
+for(( k=0;k<100;k++ ))
+do
+arr[$k]=$len
+len=$(( len-1 ))
+done
+
 print()
 {
 echo "----------------------------------------------------"
@@ -8,37 +15,37 @@ echo "----------------------------------------------------"
 	{
 		if(( $i%2!=0 ))
 		then
-		count=$(( count-10 ))
+			count=$(( count+9 ))
 		fi
 		for(( j=0; j<10; j++ ))
-		{
+		{	
 			if(( $i%2==0 ))
 			then
-			arr[$j]=$count
-			if(( $count>99 ))
-			then
-			echo -ne " ||"${arr[$j]}
+				if(( ${arr[$count]}==99 ))
+				then
+					echo -ne "||"${arr[$count]}
+				else
+					echo -ne " ||"${arr[$count]}
+				fi
+				count=$(( count+1 ))
 			else
-			echo -ne " ||"${arr[$j]}
+				if(( ${arr[$count]} > 9 ))
+				then
+					echo -ne " ||"${arr[$count]}
+				else
+					echo -ne " ||0"${arr[$count]}
+				fi
+				count=$(( count-1 ))
 			fi
-			count=$(( count-1 ))
-			else
-			count=$(( count+1 ))
-			arr[$j]=$count
-			if(( $count<10 ))
-			then
-			echo -ne " ||0"${arr[$j]}
-			else
-			echo -ne " ||"${arr[$j]}
-			fi
-			fi
+			
 		}
-		echo
 		if(( $i%2!=0 ))
 		then
-			count=$(( count-10 ))
+			count=$(( count+11))
 		fi
+		echo
 	}
 echo "----------------------------------------------------"
 }
-
+print
+rnd=$(( 1+RANDOM%6 ))
