@@ -1,5 +1,4 @@
 echo "            Welcome to Snake and Ladder Game "
-count=0
 len=100
 declare -A arr[100]
 for(( k=0;k<100;k++ ))
@@ -7,7 +6,7 @@ do
 arr[$k]=$len
 len=$(( len-1 ))
 done
-
+count=0
 print()
 {
 echo "----------------------------------------------------"
@@ -48,12 +47,23 @@ echo "----------------------------------------------------"
 echo "----------------------------------------------------"
 }
 anoop=1
-imran=2
+imran=1
+RollTime=0
 read -p "Enter choice to playe for player 1 for player1 and 2 for player2 " ch
-while(( $anoop!=100 ))
+while(( $anoop!=100 && $imran!=100 ))
 do
+	#clear
+	if(( $anoop==99  ))
+	then
+		anoop=1
+		echo "Anoop bitten by snake he reached at position : " $anoop
+	fi
+	if(( $imran==99  ))
+	then
+		imran=1
+		echo "Imran bitten by snake he reached at position : " $imran
+	fi
 	rnd=$(( 1+RANDOM%6 ))
-	echo $rnd
 	if(( $ch==1 ))
 	then
 	  	anoop=$(( anoop+rnd ))
@@ -61,15 +71,31 @@ do
 		then
 			anoop=$(( anoop-rnd ))
 		fi
-		echo $anoop
+		echo "Anoop is at position : "$anoop
+		ch=2
 		if(( $anoop==100 ))
 		then
 			echo "Anoop won"
 		fi
+	elif(( $ch==2 ))
+	then
+		imran=$(( imran+rnd ))
+		if(( $imran>100 ))
+		then
+			imran=$(( imran-rnd ))
+		fi
+		echo "Imran is at position : "$imran
+		ch=1
+		if(( $imran==100 ))
+		then
+			echo "Imran won"
+		fi
+	
 	fi
+	RollTime=$(( RollTime+1 ))
 done
-
-
+echo $RollTime "times roll is done "
+print
 
 
 
