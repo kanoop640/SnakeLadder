@@ -52,7 +52,16 @@ RollTime=0
 read -p "Enter choice to playe for player 1 for player1 and 2 for player2 " ch
 while(( $anoop!=100 && $imran!=100 ))
 do
-	#clear
+	if(( $anoop==10 ))
+	then
+		anoop=91
+		echo "Anoop got the ladder he reached at position : " $anoop
+	fi
+	if(( $imran==10 ))
+	then
+		imran=91
+		echo "Imran got the ladder he reached at position : " $imran
+	fi
 	if(( $anoop==99  ))
 	then
 		anoop=1
