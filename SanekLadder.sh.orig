@@ -47,56 +47,13 @@ echo "----------------------------------------------------"
 	}
 echo "----------------------------------------------------"
 }
-anoop=1
-imran=2
-read -p "Enter choice to playe for player 1 for player1 and 2 for player2 " ch
-while(( $anoop!=100 ))
-do
-	rnd=$(( 1+RANDOM%6 ))
-	echo $rnd
-	if(( $ch==1 ))
-	then
-	  	anoop=$(( anoop+rnd ))
-		if(( $anoop>100 ))
-		then
-			anoop=$(( anoop-rnd ))
-		fi
-		echo $anoop
-		if(( $anoop==100 ))
-		then
-			echo "Anoop won"
-		fi
-	fi
-done
+<<<<<<< HEAD
+print
+rnd=$(( 1+RANDOM%6 ))
+=======
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+rnd=$(( 1+RANDOM%6 ))
+player1=1
+player2=2
+echo $rnd
+>>>>>>> use2
