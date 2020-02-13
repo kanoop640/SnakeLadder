@@ -66,6 +66,7 @@ do
 	rnd=$(( 1+RANDOM%6 ))
 	if(( $ch==1 ))
 	then
+		echo "Anoo's random number is : " $rnd
 	  	anoop=$(( anoop+rnd ))
 		if(( $anoop>100 ))
 		then
@@ -79,6 +80,7 @@ do
 		fi
 	elif(( $ch==2 ))
 	then
+		echo "Imran's random number is : " $rnd
 		imran=$(( imran+rnd ))
 		if(( $imran>100 ))
 		then
