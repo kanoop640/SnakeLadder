@@ -3,6 +3,7 @@ count=100
 declare -A arr[100]
 print()
 {
+echo "----------------------------------------------------"
 	for(( i=0;i<10;i++ ))
 	{
 		if(( $i%2!=0 ))
@@ -14,12 +15,22 @@ print()
 			if(( $i%2==0 ))
 			then
 			arr[$j]=$count
+			if(( $count>99 ))
+			then
+			echo -ne " ||"${arr[$j]}
+			else
+			echo -ne " ||"${arr[$j]}
+			fi
 			count=$(( count-1 ))
-			echo -ne " "${arr[$j]}
 			else
 			count=$(( count+1 ))
 			arr[$j]=$count
-			echo -ne " "${arr[$j]}
+			if(( $count<10 ))
+			then
+			echo -ne " ||0"${arr[$j]}
+			else
+			echo -ne " ||"${arr[$j]}
+			fi
 			fi
 		}
 		echo
@@ -28,6 +39,6 @@ print()
 			count=$(( count-10 ))
 		fi
 	}
+echo "----------------------------------------------------"
 }
-print
 
