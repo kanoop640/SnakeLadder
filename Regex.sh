@@ -25,7 +25,7 @@ lname()
 mobile()
 {
  read -p "Enter your mobile number " mob
- m=$(echo "$mob" |awk '/^[0-9]{10}$/{print $0}')
+ m=$(echo "$mob" |awk '/^[6-9]{1}[0-9]{9}$/{print $0}')
  if [[ $m  ]]
  then
 	echo $m
