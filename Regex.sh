@@ -7,6 +7,7 @@ fname()
 	echo $f
  else
 	echo "First name should be greter than 5 and less than 10 and should be between a to z "
+	fname
  fi
 }
 lname()
@@ -18,6 +19,7 @@ lname()
 	echo $l
  else
 	echo "Last name should be greter than 5 and less than 10 and should be between a to z "
+	lname
  fi
 }
 mobile()
@@ -29,6 +31,7 @@ mobile()
 	echo $m
  else
 	echo "Mobile number should be 10 digits  "
+	mobile
  fi
 }
 mail()
@@ -40,6 +43,7 @@ mail()
 	echo $e
  else
 	echo "Invalid Password "
+	mail
  fi
 }
 password()
@@ -51,6 +55,7 @@ password()
 	echo $p
  else
 	echo "Password should be minimum 8 character of number and should be less then 15 number or character "
+	password
  fi
 }
 fname
